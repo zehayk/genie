@@ -1,16 +1,22 @@
 # genie
 
-A new Flutter project.
+Android location simulation app.
 
-## Getting Started
+## Setup
 
-This project is a starting point for a Flutter application.
+To get started using this app, you must enable developer settings, and go to "**Select mock location app**", and choose genie.
 
-A few resources to get you started if this is your first Flutter project:
+> **API Key Setup:** got to `\genie\android\app\src\main\AndroidManifest.xml` and put your google API Key at metadata: "com.google.android.geo.API_KEY"
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### Permissions used:
+- ACCESS_FINE_LOCATION
+- ACCESS_COARSE_LOCATION
+- WAKE_LOCK
+- FOREGROUND_SERVICE
+- REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+- ACCESS_BACKGROUND_LOCATION
+- FOREGROUND_SERVICE_LOCATION
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Usage:
+
+[![coming soon](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
