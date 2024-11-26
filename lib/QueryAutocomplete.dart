@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import 'ApiKeyProvider.dart';
+
 class QueryAutocompleteSearchBar extends StatefulWidget {
   @override
   _QueryAutocompleteSearchBarState createState() =>
@@ -9,9 +11,26 @@ class QueryAutocompleteSearchBar extends StatefulWidget {
 }
 
 class _QueryAutocompleteSearchBarState extends State<QueryAutocompleteSearchBar> {
-  final String apiKey = 'AIzaSyDvuRhcfqKSZs5tctT8Zp9FvErV7OpQ_vI';
+  late final String apiKey;
   final TextEditingController _searchController = TextEditingController();
   List<String> _predictions = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    fetchApiKey();
+  }
+
+  Future<String> fetchApiKey() async {
+    String? apiKey = await ApiKeyProvider.getApiKey();
+    if (apiKey != null) {
+      return apiKey;
+    } else {
+      print("Failed to retrieve API key");
+      return "";
+    }
+  }
 
   Future<void> _fetchQueryPredictions(String input) async {
     if (input.isEmpty) {
